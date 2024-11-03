@@ -1,13 +1,16 @@
-import React from 'react'
-import TodoList from './components/TodoList/TodoList'
-import "./App.css"
+import { FC } from "react";
+import "./App.css";
+import TodoPage from "./components/TodoPage/TodoPage";
+import { TodoProvider } from "./context/TodoContext";
 
-const App:React.FC = () => {
+const App: FC = () => {
   return (
-    <div className='app'>
-      <TodoList/>
+    <div className="app">
+      <TodoProvider>
+        <TodoPage />
+      </TodoProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

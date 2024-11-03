@@ -1,11 +1,11 @@
 import React from "react";
 import "./TodoItem.css";
-import { Todo } from "../TodoList/TodoList";
+import { Todo } from "../../tyeps/Todo";
 
 interface TodoItemProps {
   todo: Todo;
-  deleteTodo: (id: string) => Promise<void>;
-  toggleCompletion: (id: string) => Promise<void>;
+  deleteTodo: (id: string) => void;
+  toggleCompletion: (id: string) => void;
 }
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,

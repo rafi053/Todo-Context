@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import  { FC, useState } from "react";
 import "./TodoForm.css";
+import { useGlobalTodo } from "../../context/TodoContext";
 
-interface TodoFormProps {
-  addTodo: (title: string) => Promise<void>;
-}
-const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
+const TodoForm: FC = () => {
+  const { addTodo } = useGlobalTodo();
   const [newTodo, setNewTodo] = useState<string>("");
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!newTodo.trim()) {
